@@ -9,8 +9,8 @@ namespace JCore.Date
         public static void GetPeriod(Period period, DateTime? specialDate, out DateTime beginDate, out DateTime endDate)
         {
             var datetime = specialDate == null ? DateTime.Today : Convert.ToDateTime(specialDate);
-            var year = DateTime.Today.Year;
-            var month = DateTime.Today.Month;
+            var year = datetime.Year;
+            var month = datetime.Month;
             switch (period)
             {
                 case Period.Day:

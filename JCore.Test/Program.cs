@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace JCore.Test
+namespace JCore.Tests
 {
-    static class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        public virtual void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
     }
 }
