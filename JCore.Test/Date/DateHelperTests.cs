@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using JCore.Date;
 using NUnit.Framework;
 
@@ -11,6 +12,10 @@ namespace JCore.Tests.Date
         [Test]
         public void GetPeriod()
         {
+            //File.AppendAllText("./accessLog.txt", "1");
+            //File.AppendAllText("./accessLog.txt", "2");
+            //var b = 10 * 60;
+            
             var now = DateTime.Now;
             DateHelper.GetPeriod(Period.Day, null, out var begin, out var end);
             Assert.AreEqual(now.Date,begin.Date);
@@ -29,6 +34,13 @@ namespace JCore.Tests.Date
             DateHelper.GetPeriod(Period.Year, dt, out var begin33, out var end33);
             Assert.AreEqual(dt.Date.AddMonths(-9),begin33);
             Assert.AreEqual(dt.Date.AddMonths(2).AddDays(30),end33);
+        }
+
+        [Test]
+        public void test()
+        {
+            var utcnow = DateTime.UtcNow.Date;
+            var utcnow1 = DateTime.UtcNow;
         }
     }
 }
