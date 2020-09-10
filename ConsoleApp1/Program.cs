@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -10,7 +11,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
+            Demo();
+            return;
             DemonstrateMergeTable();
 
             return;
@@ -54,6 +56,115 @@ namespace ConsoleApp1
             return;
 
             Delegate.Run();
+        }
+
+        private static void Demo()
+        {
+            var balance = 10 / 10;
+            var a = (decimal)balance / 10;
+            Console.WriteLine(a);
+            return;
+            StrMode("1111");
+            Console.WriteLine("输入5.则下面要输出朝东天窗开，外遮阳关，朝西天窗开");
+            ProcessOut(5);
+            Console.WriteLine("1");
+            ProcessOut(1);
+            Console.WriteLine("2");
+            ProcessOut(2);
+            Console.WriteLine("3");
+            ProcessOut(3);
+            Console.WriteLine("4");
+            ProcessOut(4);
+            Console.ReadKey();
+        }
+
+        public static void StrMode(string Out)
+        {
+            Out = "1111";
+
+            foreach (var s in Out)
+            {
+                Console.WriteLine(s);
+            }
+            if (Out[0]=='1')
+            {
+                Console.WriteLine("开XX");
+            }
+
+        }
+
+
+        public static void ProcessOut(int Out)
+        {
+            /*
+             * 按照你那张截图给的注释。1朝西天窗开，2朝西天窗关。3。。。。。。
+             *
+             * 认真看了一下。这个人设计的也是有点问题。明显1和2是控制了同一个东西。结果用两个位来控制。low的一批- -。
+             * 理论上应该是这样： （简单举几个，不把所有列出来了）
+             *  朝东天窗   外遮阳  朝西天窗  
+             *    1/0       1/0     1/0
+             *  假设这人给你一个  7 => 111    那么就是这三个东西都开。
+             *  假设这人给你一个  3 => 011    那么就是外遮阳和朝西天窗开。
+             * 
+             */
+
+            if ((Out & 1) > 0)
+            {
+                朝西天窗开();
+            }
+
+            if ((Out & 2) > 0)
+            {
+                朝西天窗关();
+            }
+
+
+
+
+
+            else
+            {
+                外遮阳关();
+            }
+
+            if ((Out & 4) > 0)
+            {
+                朝东天窗开();
+            }
+            else
+            {
+                朝东天窗关();
+            }
+        }
+
+        private static void 朝东天窗关()
+        {
+            Console.WriteLine("朝东天窗关");
+        }
+
+        private static void 朝东天窗开()
+        {
+            Console.WriteLine("朝东天窗开");
+        }
+
+        private static void 外遮阳关()
+        {
+            Console.WriteLine("外遮阳关");
+        }
+
+        private static void 外遮阳开()
+        {
+            Console.WriteLine("外遮阳开");
+        }
+
+        private static void 朝西天窗关()
+        {
+            Console.WriteLine("朝西天窗关");
+        }
+
+        private static void 朝西天窗开()
+        {
+            Console.WriteLine("朝西天窗开");
         }
 
 

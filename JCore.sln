@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bats", "CefTest\Bats.csproj", "{79DD2B8A-6A71-408C-A1C2-7E4C28503231}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,14 @@ Global
 		{79DD2B8A-6A71-408C-A1C2-7E4C28503231}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79DD2B8A-6A71-408C-A1C2-7E4C28503231}.Release|x64.ActiveCfg = Release|x64
 		{79DD2B8A-6A71-408C-A1C2-7E4C28503231}.Release|x64.Build.0 = Release|x64
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Debug|x64.Build.0 = Debug|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Release|x64.ActiveCfg = Release|Any CPU
+		{6C9C5F83-DBB8-4240-9C1D-D1BDA6DF7C50}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
