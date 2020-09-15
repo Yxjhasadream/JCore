@@ -59,10 +59,53 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tool\.eslintrc.js" />
+    <Content Include="Tool\.postcssrc.js" />
+    <Content Include="Tool\build\build.js" />
+    <Content Include="Tool\build\check-versions.js" />
+    <Content Include="Tool\build\logo.png" />
+    <Content Include="Tool\build\utils.js" />
+    <Content Include="Tool\build\vue-loader.conf.js" />
+    <Content Include="Tool\build\webpack.base.conf.js" />
+    <Content Include="Tool\build\webpack.dev.conf.js" />
+    <Content Include="Tool\build\webpack.prod.conf.js" />
+    <Content Include="Tool\config\dev.env.js" />
+    <Content Include="Tool\config\index.js" />
+    <Content Include="Tool\config\prod.env.js" />
+    <Content Include="Tool\config\test.env.js" />
+    <Content Include="Tool\index.html" />
+    <Content Include="Tool\src\assets\logo.png" />
+    <Content Include="Tool\src\main.js" />
+    <Content Include="Tool\src\router\index.js" />
+    <Content Include="Tool\test\e2e\custom-assertions\elementCount.js" />
+    <Content Include="Tool\test\e2e\nightwatch.conf.js" />
+    <Content Include="Tool\test\e2e\runner.js" />
+    <Content Include="Tool\test\e2e\specs\test.js" />
+    <Content Include="Tool\test\unit\jest.conf.js" />
+    <Content Include="Tool\test\unit\setup.js" />
+    <Content Include="Tool\test\unit\specs\HelloWorld.spec.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tool\package-lock.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tool\src\App.vue" />
+    <Content Include="Tool\src\components\HelloWorld.vue" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tool\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tool\.babelrc" />
+    <Content Include="Tool\.editorconfig" />
+    <Content Include="Tool\.eslintignore" />
+    <Content Include="Tool\README.md" />
+    <Content Include="Tool\static\.gitkeep" />
+    <Content Include="Tool\test\unit\.eslintrc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
