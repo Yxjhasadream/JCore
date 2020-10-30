@@ -7,8 +7,16 @@
         <a href="https://vuejs.org" target="_blank">官方文档</a>
       </li>
       <li>
-         <router-link to="/tool/sqlbuilder">sql</router-link>
-         
+        <router-link to="/tool/sqlbuilder">sql</router-link>
+      </li>
+      <router-view></router-view>
+
+      <li>
+        <router-link to="/tool/csharpsummary">summary</router-link>
+      </li>
+      <router-view></router-view>
+      <li>
+        <router-link to="/select">select</router-link>
       </li>
       <router-view></router-view>
     </ul>
@@ -24,7 +32,9 @@
         <a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a>
       </li>
       <li>
-        <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
+        <a href="https://github.com/vuejs/awesome-vue" target="_blank"
+          >awesome-vue</a
+        >
       </li>
     </ul>
   </div>

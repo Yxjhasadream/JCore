@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import SqlBuilder from '@/components/SqlBuilder'
+import select from '@/components/select'
+import csharpsummary from '@/components/csharpsummary'
 
 Vue.use(Router)
 
@@ -16,6 +18,16 @@ export default new Router({
       path: '/tool/sqlbuilder',
       name: 'sql',
       component: SqlBuilder
+    },
+    {
+      path: '/select',
+      name: 'select',
+      component: select
+    },
+    {
+      path:'/tool/csharpsummary',
+      name:"csharpsummary",
+      component:csharpsummary
     }
   ]
 })

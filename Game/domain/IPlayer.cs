@@ -1,41 +1,34 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Game.domain
 {
     /// <summary>
     /// 选手
     /// </summary>
-    public class Player
+    public interface IPlayer
     {
         /// <summary>
         /// 编号。
         /// </summary>
-        public int No;
+        int No { get; set; }
 
         /// <summary>
         /// 自身得分。
         /// </summary>
-        public int Score;
+        int Score { get; set; }
 
         /// <summary>
         /// 选手类型。
         /// </summary>
-        private PlayerType _type;
-
-        /// <summary>
-        /// 合作列表。key为对方id，value为上一次合作结果。
-        /// </summary>
-        private Dictionary<int, bool> Cooperationers;
+        PlayerType Type { get; }
 
         /// <summary>
         /// 根据对方选手的id，决定是否合作。
         /// </summary>
         /// <param name="no">对方选手Id</param>
         /// <returns></returns>
-        public bool Cooperation(int no)
-        {
-            return true;
-        }
+        bool Cooperation(int no);
     }
 
     /// <summary>

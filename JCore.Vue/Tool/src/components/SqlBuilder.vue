@@ -29,6 +29,7 @@
       <div class="otption">
         <span>默认值</span>
         <input type="text" v-model="defval" />
+        <input type="checkbox" v-model="needDefval" />
       </div>
       <div class="otption">
         <span>注释</span>
@@ -38,7 +39,7 @@
     <!--sqlsever -->
     <pre v-show="sqlType==='1'">
 <h2>添加列与注释</h2>
-ALTER TABLE {{table}} ADD {{column}} {{datatype}}  {{allownull?'':'NOT NULL'}} {{defval.length>0?'CONSTRAINT DF_'+table+'_'+column+ 'DEFAULT '+defval:'' }}
+ALTER TABLE {{table}} ADD {{column}} {{datatype}}  {{allownull?'':'NOT NULL'}} {{ needDefval?(defval.length>0?'CONSTRAINT DF_'+table+'_'+column+ ' DEFAULT '+defval:''):'' }}
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'{{des}}' ,
 @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'{{table}}',
@@ -59,10 +60,10 @@ EXEC sp_updateextendedproperty @name=N'MS_Description',
     <!--mysql -->
     <pre v-show="sqlType==='2'">
 <h2>添加列与注释</h2>
-alter table {{table}} add column {{column}} {{datatype}} {{allownull?'':'not null'}}  {{defval.length>0?"Default "+defval:''}}  {{des.length>0?"COMMENT '"+des+"'":''}};
+alter table {{table}} add column {{column}} {{datatype}} {{allownull?'':'not null'}}  {{ needDefval?(defval.length>0?"Default "+defval:''):'' }}  {{des.length>0?"COMMENT '"+des+"'":''}};
 
 <h2>修改注释</h2>
-alter table {{table}} modify column {{column}} {{datatype}} {{allownull?'':'not null'}} {{defval.length>0?"Default "+defval:''}} comment '{{des}}';
+alter table {{table}} modify column {{column}} {{datatype}} {{allownull?'':'not null'}} {{ needDefval?(defval.length>0?"Default "+defval:''):'' }} comment '{{des}}';
 
 <h2>修改列的属性</h2>
 alter table {{table}} modify {{column}} {{datatype}};
@@ -77,6 +78,7 @@ export default {
     return {
       table: "表名",
       defval: "默认值",
+      needDefval:false,
       allownull:false,
       column: "列名",
       des: "注释",
