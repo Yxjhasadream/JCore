@@ -1,8 +1,9 @@
 <template>
     <div class="">
        <textarea class="main" v-model="result" />
-       <router-link class="back" to="/">返回首页</router-link>
+               -->
        <textarea class="main" v-bind:value="getSummary()"></textarea>
+       <router-link class="back" to="/">返回首页</router-link>
     </div>
 </template>
 <script>

@@ -19,6 +19,10 @@
         <router-link to="/select">select</router-link>
       </li>
       <router-view></router-view>
+      <li>
+        <router-link to="/tool/time">time</router-link>
+      </li>
+      <router-view></router-view>
     </ul>
     <h2>相关组件</h2>
     <ul>

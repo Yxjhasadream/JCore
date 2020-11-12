@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import SqlBuilder from '@/components/SqlBuilder'
 import select from '@/components/select'
 import csharpsummary from '@/components/csharpsummary'
+import timeUtils from '@/components/timeUtils'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path:'/tool/csharpsummary',
       name:"csharpsummary",
       component:csharpsummary
+    },
+    {
+      path:'/tool/time',
+      name:'timeUtils',
+      component:timeUtils
     }
   ]
 })
