@@ -16,10 +16,13 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var path = "2020-11-06T03:48:12.431285768Z";
-            var name = Convert.ToDateTime(path);
-            return;
 
+
+        }
+
+        private static void Monggo()
+        {
+            var path = "";
             var Conn = new SQLiteConnection($"Data Source={path};Initial Catalog=sqlite;Integrated Security=True;Max Pool Size=10");
             SQLiteCommand cmd = Conn.CreateCommand();
             cmd.CommandText = "select ROOT from REPOSITORY order by id desc limit 1";
@@ -31,9 +34,9 @@ namespace ConsoleApp1
             da.Dispose();
             cmd.Connection.Close();
             cmd.Dispose();
-            if (ds.Tables.Count>0)
+            if (ds.Tables.Count > 0)
             {
-                if (ds.Tables[0].Rows.Count>0)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
                     Console.WriteLine(ds.Tables[0].Rows[0]["ROOT"]);
                 }
