@@ -4,7 +4,7 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using Aspose.Cells;
+//using Aspose.Cells;
 
 namespace JCore.FileHelper
 {
