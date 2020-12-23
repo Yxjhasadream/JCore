@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using NUnit.Framework;
 
@@ -40,6 +41,29 @@ namespace JCore.Tests.txtResolve
             var dt = GetDataTableFromSvc(_multiLineData);
             Assert.AreEqual(dt.Rows.Count, 3);
             Assert.AreEqual(dt.Columns.Count, 3);
+        }
+
+        public int[] TwoSum(int[] nums, int target)
+        {
+            var res = new int[2];
+            var pre = 0;
+            var current = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var temp = nums[i];
+                if (target < temp)
+                {
+                    continue;
+                }
+
+                if (current > 0)
+                {
+                    pre = current;
+                    current = temp;
+                }
+            }
+
+            throw new NotImplementedException();
         }
 
         private static DataTable GetDataTableFromSvc(string text)
