@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTool", "GitTool\GitTool.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{411C32C3-1C67-43DF-A343-3C5DF960837C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInteractive", "GitInteractive\GitInteractive.csproj", "{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,14 @@ Global
 		{411C32C3-1C67-43DF-A343-3C5DF960837C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{411C32C3-1C67-43DF-A343-3C5DF960837C}.Release|x64.ActiveCfg = Release|Any CPU
 		{411C32C3-1C67-43DF-A343-3C5DF960837C}.Release|x64.Build.0 = Release|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Debug|x64.Build.0 = Debug|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Release|x64.ActiveCfg = Release|Any CPU
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +120,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E617F782-4C2B-4511-9DB4-8658DC7166A5} = {314E0F97-C756-4419-801C-B38B1719E57C}
 		{411C32C3-1C67-43DF-A343-3C5DF960837C} = {314E0F97-C756-4419-801C-B38B1719E57C}
+		{A3BD7661-8227-4B43-A5D4-64DF38E83DEC} = {314E0F97-C756-4419-801C-B38B1719E57C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E3CA6A4-40FF-43A8-BDEE-4ABF5D486420}
