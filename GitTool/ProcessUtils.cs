@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GitTool
 {
-    public class ProcessUtils
+    public static class ProcessUtils
     {
         /// <summary>
         /// 按参数执行指定的进程，不显示窗口。
