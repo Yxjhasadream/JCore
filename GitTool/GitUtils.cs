@@ -43,20 +43,19 @@ namespace GitTool
 
         /// <summary>
         /// git clone 操作。
-        ///
-        /// 考虑做一个本地的持久化，如果外部没有传进来帐号和密码。则使用本地记录的。如果本地也没有，则提示让用户进行帐号密码的初始化。
         /// </summary>
-        /// <param name="remote"></param>
-        /// <param name="account"></param>
-        /// <param name="password"></param>
-        public static string GitClone(string remote, string account, string password)
+        /// <param name="remote">git远程仓库地址。</param>
+        /// <param name="account">帐号。</param>
+        /// <param name="password">密码。</param>
+        /// <param name="localPath">git仓库clone到本地的路径。</param>
+        public static string GitClone(string remote, string account, string password, string localPath = "")
         {
             account = WebUtility.UrlEncode(account);
             password = WebUtility.UrlEncode(password);
             var dir = Directory.GetCurrentDirectory();
             var uri = new Uri(remote);
             var address = $"http://{account}:{password}@{uri.Host + uri.AbsolutePath}";
-            var arguments = $"clone {address}";//格式为http://username:password@address 需要注意的是。username和password需要进行一下转译。
+            var arguments = $"clone {address} {localPath}";//格式为http://username:password@address 需要注意的是。username和password需要进行一下转译。
             var res = ExecGitCommand(arguments, dir);
             return res;
         }
@@ -124,6 +123,7 @@ namespace GitTool
                 GitCommit(dir, message);
             }
 
+            status = GitStatus(dir);
             if (status.Contains("use \"git push\""))
             {
                 var arguments = "push";
