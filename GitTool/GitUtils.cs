@@ -93,6 +93,12 @@ namespace GitTool
                 throw new GitTolException("每次提交必须要添加注释！");
             }
 
+            var status = GitStatus(dir);
+            if (status.Contains("nothing to commit"))
+            {
+                throw new GitTolException("没有可提交的更新文件，请检查。");
+            }
+
             GitStash(dir);
             GitPull(dir);
             var stash = GitStash(dir, "pop");
@@ -115,7 +121,7 @@ namespace GitTool
             }
 
             GitAdd(dir);
-            var status = GitStatus(dir);
+            status = GitStatus(dir);
             if (!status.Contains("nothing to commit"))
             {
                 var changeFiles = GetChangeFiles(status);

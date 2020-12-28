@@ -41,6 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.RemoteGitUrl = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NewRemark = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.Repositories = new System.Windows.Forms.DataGridView();
             this.SaveAccount = new System.Windows.Forms.Button();
             this.NewLocalPath = new System.Windows.Forms.TextBox();
@@ -51,6 +53,8 @@
             this.delete = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Remark = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.Loading = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -62,7 +66,7 @@
             // 
             // Push
             // 
-            this.Push.Location = new System.Drawing.Point(523, 214);
+            this.Push.Location = new System.Drawing.Point(523, 270);
             this.Push.Name = "Push";
             this.Push.Size = new System.Drawing.Size(75, 23);
             this.Push.TabIndex = 8;
@@ -72,15 +76,16 @@
             // 
             // LocalPath
             // 
-            this.LocalPath.Location = new System.Drawing.Point(121, 52);
+            this.LocalPath.Location = new System.Drawing.Point(121, 111);
             this.LocalPath.Name = "LocalPath";
+            this.LocalPath.ReadOnly = true;
             this.LocalPath.Size = new System.Drawing.Size(477, 21);
             this.LocalPath.TabIndex = 6;
             // 
             // address
             // 
             this.address.AutoSize = true;
-            this.address.Location = new System.Drawing.Point(17, 55);
+            this.address.Location = new System.Drawing.Point(23, 114);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(77, 12);
             this.address.TabIndex = 3;
@@ -90,15 +95,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 113);
+            this.label1.Location = new System.Drawing.Point(23, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = "说明";
+            this.label1.Text = "提交更新说明";
             // 
             // CommitText
             // 
-            this.CommitText.Location = new System.Drawing.Point(121, 110);
+            this.CommitText.Location = new System.Drawing.Point(121, 160);
             this.CommitText.Name = "CommitText";
             this.CommitText.Size = new System.Drawing.Size(477, 87);
             this.CommitText.TabIndex = 7;
@@ -143,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 19);
+            this.label5.Location = new System.Drawing.Point(23, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 12);
             this.label5.TabIndex = 13;
@@ -152,14 +157,17 @@
             // 
             // RemoteGitUrl
             // 
-            this.RemoteGitUrl.Location = new System.Drawing.Point(121, 16);
+            this.RemoteGitUrl.Location = new System.Drawing.Point(121, 61);
             this.RemoteGitUrl.Name = "RemoteGitUrl";
+            this.RemoteGitUrl.ReadOnly = true;
             this.RemoteGitUrl.Size = new System.Drawing.Size(477, 21);
             this.RemoteGitUrl.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.NewRemark);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.Repositories);
             this.panel1.Controls.Add(this.SaveAccount);
             this.panel1.Controls.Add(this.NewLocalPath);
@@ -178,6 +186,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(705, 508);
             this.panel1.TabIndex = 16;
+            // 
+            // NewRemark
+            // 
+            this.NewRemark.Location = new System.Drawing.Point(109, 345);
+            this.NewRemark.Name = "NewRemark";
+            this.NewRemark.Size = new System.Drawing.Size(584, 21);
+            this.NewRemark.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(59, 348);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "备注";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // Repositories
             // 
@@ -275,6 +300,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.Remark);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.address);
             this.panel2.Controls.Add(this.LocalPath);
             this.panel2.Controls.Add(this.label5);
@@ -287,6 +314,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(655, 508);
             this.panel2.TabIndex = 17;
+            // 
+            // Remark
+            // 
+            this.Remark.Location = new System.Drawing.Point(121, 21);
+            this.Remark.Name = "Remark";
+            this.Remark.ReadOnly = true;
+            this.Remark.Size = new System.Drawing.Size(477, 21);
+            this.Remark.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 12);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "备注";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // Loading
             // 
@@ -356,6 +401,10 @@
         private System.Windows.Forms.DataGridView Repositories;
         private System.Windows.Forms.PictureBox Loading;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox Remark;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox NewRemark;
+        private System.Windows.Forms.Label label9;
     }
 }
 

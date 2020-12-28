@@ -29,6 +29,9 @@ namespace GitInteractive
                 Loading.BringToFront();
                 _bindingRepositories = new BindingList<RepositorySetting>(_settings.Repositories);
                 Repositories.DataSource = _bindingRepositories;
+                Repositories.Columns[0].Width = 400;
+                Repositories.Columns[1].Width = 50;
+                Repositories.Columns[2].Width = 100;
             }
             catch (Exception exception)
             {
@@ -69,7 +72,6 @@ namespace GitInteractive
             temp.Password = Utils.DESEncrypt(_settings.Password);
             temp.Account = _settings.Account;
             temp.Repositories = _settings.Repositories;
-
             var text = JsonSerializer.Default.Serialize(temp);
             using (var writer = new StreamWriter(SettingDir))
             {
@@ -147,6 +149,7 @@ namespace GitInteractive
             var repository = new RepositorySetting();
             var path = NewLocalPath.Text;
             var remote = NewRemoteGitUrl.Text;
+            var remark = NewRemark.Text;
             if (!Directory.Exists(path))
             {
                 MessageBox.Show("此文件路径不存在,请检查！");
@@ -186,10 +189,12 @@ namespace GitInteractive
 
             repository.LocalPath = path;
             repository.RemoteUrl = remote;
+            repository.Remark = remark;
             _bindingRepositories.Add(repository);
             SetSettings();
             NewRemoteGitUrl.Text = "";
             NewLocalPath.Text = "";
+            NewRemark.Text = "";
         }
 
         /// <summary>
@@ -198,8 +203,12 @@ namespace GitInteractive
         private void Repositories_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var cells = Repositories.SelectedCells;
-            RemoteGitUrl.Text = cells[0].Value.ToString();
-            LocalPath.Text = cells[1].Value.ToString();
+            if (cells.Count==3)
+            {
+                LocalPath.Text = cells[0].Value.ToString();
+                RemoteGitUrl.Text = cells[1].Value.ToString();
+                Remark.Text = cells[2].Value.ToString();
+            }
         }
     }
 }

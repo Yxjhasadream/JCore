@@ -20,14 +20,19 @@ namespace GitInteractive
     public class RepositorySetting
     {
         /// <summary>
+        /// 本地路径。
+        /// </summary>
+        public string LocalPath { get; set; }
+
+        /// <summary>
         /// 远程git库地址。
         /// </summary>
         public string RemoteUrl { get; set; }
 
         /// <summary>
-        /// 本地路径。
+        /// 备注信息。
         /// </summary>
-        public string LocalPath { get; set; }
+        public string Remark { get; set; }
 
         /// <inheritdoc />
         public override string ToString()
