@@ -24,7 +24,7 @@ namespace Tests.GitTool
         [Test]
         public static void Init()
         {
-            GitUtils.Init("", "");
+            GitUtils.Init();
         }
 
         [Test]

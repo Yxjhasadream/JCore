@@ -14,16 +14,16 @@ namespace GitTool
         private static readonly Regex FileRegex = new Regex("\\s*modified:\\s*(?<file>.*)\\s*");
         private static readonly Regex DateRegex = new Regex("new Date\\(\\d*\\.?\\d*\\)");
 
-        public static void Init(string account, string password)
+        public static void Init()
         {
-            SetAccount(account, password);
+            SetCredentialStore();
             SetQuotePath();
         }
 
         /// <summary>
         /// 设置帐号密码为持久化保存。设置credential.helper 为store模式。
         /// </summary>
-        public static string SetAccount(string account, string password)
+        public static string SetCredentialStore()
         {
             var arguments = "config --global credential.helper store";
             var res = ExecGitCommand(arguments);
