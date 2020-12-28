@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Data.SQLite;
+using System.Security.Cryptography;
 
 namespace ConsoleApp1
 {
@@ -14,10 +15,36 @@ namespace ConsoleApp1
         private static string NginxConfPath = "D:\\Nginx\\sites-enabled,D:\\Nginx\\sites-enabled\\store.emmmd.com.conf";
         private static Regex regex = new Regex(@":\d+");
 
+        private static string GenerateKey()
+        {
+            byte[] key = new byte[8];
+            do
+            {
+                var ran= new Random();
+                ran.NextBytes(key);
+                FillParityBits(key);
+            }
+            while (DES.IsWeakKey(key) || DES.IsSemiWeakKey(key));
+            return $"private static byte[] _key = {{ { key[0]}, {key[1]}, {key[2]}, {key[3]}, {key[4]},{key[5]},{key[6]},{key[7]} }};";
+        }
+
+        private static void FillParityBits(byte[] key)
+        {
+            for (int index1 = 0; index1 < key.Length; ++index1)
+            {
+                int num1 = (int)key[index1] & 254;
+                int num2 = 0;
+                for (int index2 = num1; index2 != 0; index2 >>= 1)
+                    num2 ^= index2 & 1;
+                int num3 = num2 ^ 1;
+                key[index1] = (byte)(num1 | num3);
+            }
+        }
+
         static void Main(string[] args)
         {
-
-
+            var key= GenerateKey();
+            
         }
 
         private static void Monggo()
